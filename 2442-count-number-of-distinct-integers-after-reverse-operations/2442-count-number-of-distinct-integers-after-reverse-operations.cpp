@@ -9,12 +9,12 @@ public:
         return a;
     }
     int countDistinctIntegers(vector<int>& nums) {
-        set<int>ans;
+        unordered_map<int,int>m;
         for(int i=0;i<nums.size();i++){
             int t=rev(nums[i]);
-            ans.insert(nums[i]);
-            ans.insert(t);
+            m[nums[i]]++;
+            m[t]++;
         }
-        return ans.size();
+        return m.size();
     }
 };
