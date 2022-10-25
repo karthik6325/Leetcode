@@ -2,7 +2,7 @@ class Solution {
 public:
     string minWindow(string s, string t) {
         int j=0,i=0,b=0,d=INT_MAX;
-        map<char,int>m;
+        vector<int>m(128,0);
         for(int i=0;i<t.size();i++)
             m[t[i]]++;
         int c=t.size();
