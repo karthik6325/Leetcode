@@ -3,10 +3,10 @@ public:
     string convertToTitle(int n) {
         string ans="";
         while(n>0){
-            n--;
-            ans=(char)('A'+n%26)+ans;
-            n/=26;
+            int t=(n-1)%26;
+            n=(n-1)/26;
+            ans=(char)(t+'A')+ans;
         }
-        return ans;
+        return ans;    
     }
 };
