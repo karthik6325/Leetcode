@@ -1,9 +1,7 @@
 class Solution {
 public:
-    int maximumGroups(vector<int>& grades) {
-        int k = 0, total = 0, n = grades.size();
-        while (total + k + 1 <= n)
-            total += ++k;
-        return k;
+    int maximumGroups(vector<int>& g) {
+    int res = sqrt(g.size() * 2);
+    return res - (res * (res + 1) / 2 > g.size());
     }
 };
