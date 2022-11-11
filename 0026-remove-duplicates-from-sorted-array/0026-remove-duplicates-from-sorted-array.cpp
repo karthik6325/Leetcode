@@ -1,13 +1,20 @@
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
-        map<int,int>a;
-        for(int i=0;i<nums.size();i++){
-            a[nums[i]]++;
-            if(a[nums[i]]>1)
-                nums[i]=INT_MAX;
+        if(nums.size()==0)
+        return 0;
+        int t=0,n=nums.size(),c=1;
+        t=nums[0];
+        for(int i=1;i<nums.size();i++){
+            if(t==nums[i]){
+                nums[i]=101;
+            }
+            else{
+                t=nums[i];
+                c++;
+            }
         }
         sort(nums.begin(),nums.end());
-        return a.size();
+        return c;
     }
 };
