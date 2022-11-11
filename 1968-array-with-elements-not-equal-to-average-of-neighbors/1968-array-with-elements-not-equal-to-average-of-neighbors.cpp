@@ -1,18 +1,13 @@
 class Solution {
 public:
     vector<int> rearrangeArray(vector<int>& nums) {
-        int n= nums.size();
-        
-        for(int i= 1; i< n-1;){
-        
-            if((nums[i-1] + nums[i+1])/2 == nums[i]) {
-                swap(nums[i], nums[i+1]);
-                if(i > 1)
-                    i--;
-            }
-            else
-                i++;   
-        }   
-        return nums;
+        sort(nums.begin(),nums.end());
+        vector<int>ans(nums.size());
+        int k=0;
+        for(int i=0;i<nums.size();i+=2)
+            ans[i]=nums[k++];
+        for(int i=1;i<nums.size();i+=2)
+            ans[i]=nums[k++];
+        return ans;
     }
 };
