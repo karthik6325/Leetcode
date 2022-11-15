@@ -13,6 +13,8 @@ public:
                 ans++;
             }
             else{
+                if(t==1)
+                    break;
                 ans+=t-1;
                 break;
             }
