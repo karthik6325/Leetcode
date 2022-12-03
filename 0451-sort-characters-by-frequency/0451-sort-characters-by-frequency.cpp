@@ -6,11 +6,8 @@ public:
         string ans;
         for(auto i:s)
             m[i]++;
-        for(auto i:m){
-            int t=i.second;
-            while(t--)
-                b[i.second].push_back(i.first);
-        }
+        for(auto i:m)
+            b[i.second].append(i.second,i.first);
         for(int i=s.size();i>=0;i--){
             if(!b[i].empty())
                 ans+=b[i];
