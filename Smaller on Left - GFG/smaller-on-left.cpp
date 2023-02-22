@@ -40,10 +40,10 @@ int main() {
 vector<int> Smallestonleft(int a[], int n)
 {
     // Complete the function
-    set<int>s;
+    map<int,int>s;
     vector<int>ans;
     ans.push_back(-1);
-    s.insert(a[0]);
+    s[a[0]]++;
     for(int i=1;i<n;i++){
         auto t=s.lower_bound(a[i]);
         if(t==s.begin()){
@@ -51,9 +51,9 @@ vector<int> Smallestonleft(int a[], int n)
         }
         else{
             --t;
-           ans.push_back(*t);
+           ans.push_back(t->first);
         }
-        s.insert(a[i]);
+        s[a[i]];
     }
     return ans;
 }
